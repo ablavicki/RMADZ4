@@ -46,7 +46,14 @@ public class FeedActivity extends AppCompatActivity implements Callback<RSSFeed>
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
         ButterKnife.bind(this);
+
         setupRV();
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.categories, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setSelection(0);
 
         getRSSFeed();
     }
@@ -96,7 +103,7 @@ public class FeedActivity extends AppCompatActivity implements Callback<RSSFeed>
                 .addConverterFactory(SimpleXmlConverterFactory.create())
                 .build();
         NewsAPI api = retrofit.create(NewsAPI.class);
-        Call<RSSFeed> call = api.getRSSFeed("mobiteli");
+        Call<RSSFeed> call = api.getRSSFeed(spinner.getSelectedItem().toString());
         call.enqueue(this);
     }
 

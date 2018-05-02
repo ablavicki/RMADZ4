@@ -2,4 +2,14 @@
     <string name="app_name">RMADZ4</string>
     <string name="btn_refresh">Refresh</string>
     <string name="et_hint">Enter a category</string>
+    <string-array name="categories">
+        <item>vijesti</item>
+        <item>medicina</item>
+        <item>automobili</item>
+        <item>mobiteli</item>
+        <item>biznis</item>
+        <item>recenzije</item>
+        <item>igre</item>
+        <item>internet</item>
+    </string-array>
 </resources>
