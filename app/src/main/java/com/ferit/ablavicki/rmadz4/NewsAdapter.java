@@ -25,7 +25,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     public NewsAdapter(Context context, NewsClickCallback onNewsClickListener) {
         this.context = context;
         this.onNewsClickCallback = onNewsClickListener;
-
     }
 
     @Override
@@ -46,22 +45,22 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-
         if(news != null)
             return this.news.size();
         else
             return 0;
     }
 
+    public void setList(List<News> list) {
+        this.news = list;
+        notifyDataSetChanged();
+    }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.ivPicture)
-        ImageView ivPicture;
-        @BindView(R.id.tvTitle)
-        TextView tvTitle;
-        @BindView(R.id.tvDescription)
-        TextView tvDescription;
+        @BindView(R.id.ivPicture) ImageView ivPicture;
+        @BindView(R.id.tvTitle) TextView tvTitle;
+        @BindView(R.id.tvDescription) TextView tvDescription;
 
         public ViewHolder(View itemView) {
             super(itemView);
