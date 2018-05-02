@@ -25,4 +25,21 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
+
+    implementation "com.android.support:recyclerview-v7:${rootProject.ext.androidSupportVersion}"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+
+    implementation "com.squareup.picasso:picasso:${rootProject.ext.picassoVersion}"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation('com.squareup.retrofit2:converter-simplexml:2.2.0') {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+
+    }
 }

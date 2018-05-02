@@ -15,6 +15,13 @@ buildscript {
     }
 }
 
+ext {
+    butterknifeVersion = "8.8.1"
+    androidSupportVersion = "26.1.0"
+    picassoVersion = "2.71828"
+}
+
+
 allprojects {
     repositories {
         google()
