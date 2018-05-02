@@ -7,7 +7,7 @@ import org.simpleframework.xml.Root;
 public class Poster {
     @Attribute private String url;
 
-    public String geturl() {
+    public String getUrl() {
         return url;
     }
 }

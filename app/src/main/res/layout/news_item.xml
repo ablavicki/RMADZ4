@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
@@ -11,19 +11,44 @@
         android:layout_margin="5dp"/>
 
     <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/ivPicture"
+        android:layout_toEndOf="@id/ivPicture"
         android:layout_margin="5dp"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/ivPicture"
+        android:layout_below="@id/tvCategory"
+        android:layout_margin="5dp"
+        android:textStyle="bold"
         android:layout_marginBottom="10dp"/>
 
     <TextView
         android:id="@+id/tvDescription"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/ivPicture"
+        android:layout_toEndOf="@id/ivPicture"
         android:layout_below="@id/tvTitle"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:textSize="12sp"
+        android:maxLines="3"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/ivPicture"
+        android:layout_below="@id/tvDescription"
+        android:layout_margin="5dp"
+        android:textStyle="italic"
+        android:textSize="12sp"/>
+
 
 </RelativeLayout>

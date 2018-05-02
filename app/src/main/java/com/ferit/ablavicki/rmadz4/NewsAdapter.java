@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +43,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         News current = this.news.get(position);
         holder.tvTitle.setText(current.getTitle());
         holder.tvDescription.setText(current.getDescription());
+        holder.tvCategory.setText(current.getCategory());
+        holder.tvDate.setText(current.getDate());
+        Picasso.get().load(current.getPoster().getUrl()).into(holder.ivPicture);
     }
 
     @Override
@@ -56,15 +61,24 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.ivPicture) ImageView ivPicture;
         @BindView(R.id.tvTitle) TextView tvTitle;
         @BindView(R.id.tvDescription) TextView tvDescription;
+        @BindView(R.id.tvCategory) TextView tvCategory;
+        @BindView(R.id.tvDate) TextView tvDate;
 
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onNewsClickCallback.onClick(news.get(getAdapterPosition()));
+                }
+            });
+
         }
     }
 }
